@@ -4,9 +4,9 @@ import bodyParser from 'body-parser';
 import formRoutes from './src/routes/formRoutes.js';
 import submitForm from './src/routes/submitForm.js';
 import Topics from './src/routes/topicRoutes.js'
-import youtubeLinks from './src/routes/youtube_links.js';
+import Note from './src/models/NoteModel.js';
 import cors from 'cors';
-import dotenv from 'dotenv';
+
 const app = express();
 
 // Middleware
@@ -41,7 +41,7 @@ app.use(cors());
 app.use('/', formRoutes);
 app.use('/', submitForm);
 app.use('/', Topics);
-app.use('/', youtubeLinks);
+app.use('/', Note);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
